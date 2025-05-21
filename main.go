@@ -17,10 +17,10 @@ var subscriptions []Subscription
 
 func main() {
 	subscriptions = []Subscription{
-		{"Netflix", 149000, "15-01", true, "Entertainment"},
-		{"Disney+", 79000, "10-03", true, "Entertainment"},
-		{"Spotify", 49900, "05-02", true, "Music"},
-		{"iCloud", 29000, "20-02", true, "Cloud Storage"},
+		{"Netflix", 149000, "15-01", true, "Hiburan"},
+		{"Disney+", 79000, "10-03", true, "Hiburan"},
+		{"Spotify", 49900, "05-02", true, "Musik"},
+		{"iCloud", 29000, "20-02", true, "Penyimpanan"},
 	}
 
 	for {
