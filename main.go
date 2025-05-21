@@ -27,6 +27,7 @@ func main() {
 		tampilanMenu()
 		menuChoice()
 	}
+	TampilkanTotalPengeluaran()
 }
 
 func tampilanMenu() {
@@ -54,7 +55,7 @@ func menuChoice() {
 	case 4:
 		checkPaymentReminders()
 	case 5:
-		totalPengeluaran()
+		TampilkanTotalPengeluaran()
 	case 0:
 		fmt.Println("Terima kasih!")
 		os.Exit(0)
