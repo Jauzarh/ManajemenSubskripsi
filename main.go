@@ -30,11 +30,12 @@ func main() {
 }
 
 func tampilanMenu() {
-	fmt.Println("\n=== APLIKASI KEUANGAN SEDERHANA ===")
+	fmt.Println("\n=== MANAGEMENT SUBKRIPSI ===")
 	fmt.Println("1. Lihat Subscription")
 	fmt.Println("2. Tambah Subscription")
 	fmt.Println("3. Cari Layanan Langganan")
-	fmt.Println("4. Periksa Pengingat Pembayaran")
+	fmt.Println("4. Periksa Pengingat")
+	fmt.Println("5. Total Pengluaran")
 	fmt.Println("0. Keluar")
 	fmt.Print("Pilih menu: ")
 }
@@ -52,6 +53,8 @@ func menuChoice() {
 		searchSubscriptions()
 	case 4:
 		checkPaymentReminders()
+	case 5:
+		totalPengeluaran()
 	case 0:
 		fmt.Println("Terima kasih!")
 		os.Exit(0)
@@ -60,7 +63,7 @@ func menuChoice() {
 	}
 }
 
-func jumlahSubkripsi(sub Subscription) {
+func subkripsi(sub Subscription) {
 	status := "Non-Aktif"
 	if sub.IsActive {
 		status = "Aktif"

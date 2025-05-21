@@ -43,7 +43,7 @@ func searchSubscriptionByName() {
 
 	if index != -1 {
 		fmt.Println("\nSubscription ditemukan pada indeks", index)
-		jumlahSubkripsi(subscriptions[index])
+		subkripsi(subscriptions[index])
 	} else {
 		fmt.Println("Subscription tidak ditemukan")
 	}
@@ -64,17 +64,17 @@ func searchByCategory() {
 		if subscriptions[mid].Category == searchCategory {
 			ketemu = true
 			fmt.Println("\nHasil Pencarian:")
-			jumlahSubkripsi(subscriptions[mid])
+			subkripsi(subscriptions[mid])
 
 			left := mid - 1
 			for left >= 0 && subscriptions[left].Category == searchCategory {
-				jumlahSubkripsi(subscriptions[left])
+				subkripsi(subscriptions[left])
 				left--
 			}
 
 			right := mid + 1
 			for right < len(subscriptions) && subscriptions[right].Category == searchCategory {
-				jumlahSubkripsi(subscriptions[right])
+				subkripsi(subscriptions[right])
 				right++
 			}
 			break
@@ -89,3 +89,4 @@ func searchByCategory() {
 		fmt.Println("Tidak ditemukan subscription dengan kategori tersebut")
 	}
 }
+
