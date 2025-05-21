@@ -27,7 +27,6 @@ func main() {
 		tampilanMenu()
 		menuChoice()
 	}
-	TampilkanTotalPengeluaran()
 }
 
 func tampilanMenu() {
@@ -49,13 +48,12 @@ func menuChoice() {
 	case 1:
 		showSubscriptions(subscriptions)
 	case 2:
-		tambahSubkripsi()
+		addSubscription()
 	case 3:
 		searchSubscriptions()
 	case 4:
 		checkPaymentReminders()
-	case 5:
-		TampilkanTotalPengeluaran()
+
 	case 0:
 		fmt.Println("Terima kasih!")
 		os.Exit(0)

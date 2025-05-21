@@ -17,7 +17,7 @@ func checkPaymentReminders() {
 		}
 
 		var haritagih, bulan int
-		fmt.Scanf(sub.BillingDate, "%02d-%02d", &haritagih, &bulan)
+		fmt.Sscanf(sub.BillingDate, "%02d-%02d", &haritagih, &bulan)
 
 		if bulansekarang == bulan {
 			daysUntilDue := haritagih - harisekarang
