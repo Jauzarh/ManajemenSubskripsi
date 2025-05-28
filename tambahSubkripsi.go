@@ -5,10 +5,10 @@ func addSubscription() {
 	var sub Subscription
 
 	fmt.Print("Nama Subscription: ")
-	fmt.Scanln(&sub.Name)
+	fmt.Scanln(&sub.Nama)
 
 	fmt.Print("Harga: ")
-	fmt.Scanln(&sub.Price)
+	fmt.Scanln(&sub.Harga)
 
 	fmt.Print("Tanggal Pembayaran (DD-MM): ")
 	var day, month int
@@ -20,19 +20,15 @@ func addSubscription() {
 		month = 1
 	}
 
-	sub.BillingDate = fmt.Sprintf("%02d-%02d", day, month)
+	sub.tanggalBiling = fmt.Sprintf("%02d-%02d", day, month)
 
 	fmt.Print("Kategori: ")
-	fmt.Scanln(&sub.Category) 
+	fmt.Scanln(&sub.Kategori) 
 
-	fmt.Print("Aktif (y/n): ")
-	var active string
-	fmt.Scanln(&active)
-    sub.IsActive = active == "y" || active == "Y"
 
     subscriptions = append(subscriptions, sub)
 
 	fmt.Println("Subscription berhasil ditambahkan!")
-	fmt.Println("Jatuh tempo 1 bulan kemudian:", sub.BillingDate)
+	fmt.Println("Jatuh tempo 1 bulan kemudian:", sub.tanggalBiling)
 }
 

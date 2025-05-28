@@ -12,26 +12,26 @@ func checkPaymentReminders() {
 	hasReminders := false
 
 	for _, sub := range subscriptions {
-		if !sub.IsActive {
+		if !sub.Aktif {
 			continue
 		}
 
 		var haritagih, bulan int
-		fmt.Sscanf(sub.BillingDate, "%02d-%02d", &haritagih, &bulan)
+		fmt.Sscanf(sub.tanggalBiling, "%02d-%02d", &haritagih, &bulan)
 
 		if bulansekarang == bulan {
 			daysUntilDue := haritagih - harisekarang
 			switch {
 			case daysUntilDue == 0:
-				fmt.Printf("HARI INI! Bayar %s - Rp%.0f\n", sub.Name, sub.Price)
+				fmt.Printf("HARI INI! Bayar %s - Rp%.0f\n", sub.Nama, sub.Harga)
 				hasReminders = true
 			case daysUntilDue > 0 && daysUntilDue <= 3:
 				fmt.Printf("%d hari lagi: %s - Rp%.0f (tgl %s)\n", 
-					daysUntilDue, sub.Name, sub.Price, sub.BillingDate)
+					daysUntilDue, sub.Nama, sub.Harga, sub.tanggalBiling)
 				hasReminders = true
 			case daysUntilDue < 0:
 				fmt.Printf("Terlambat %d hari: %s - Rp%.0f (seharusnya tgl %s)\n", 
-					-daysUntilDue, sub.Name, sub.Price, sub.BillingDate)
+					-daysUntilDue, sub.Nama, sub.Harga, sub.tanggalBiling)
 				hasReminders = true
 			}
 		}

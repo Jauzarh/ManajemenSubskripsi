@@ -7,7 +7,7 @@ func showSubscriptions(subs []Subscription) {
     for i := 0; i < n-1; i++ {
         maxIdx := i
         for j := i + 1; j < n; j++ {
-            if subs[j].Price > subs[maxIdx].Price {
+            if subs[j].Harga > subs[maxIdx].Harga {
                 maxIdx = j
             }
         }
@@ -16,15 +16,13 @@ func showSubscriptions(subs []Subscription) {
     
     fmt.Println("\nDaftar Subkripsi:")
    for i, sub := range subs {
-        status := "Aktif"
-        if !sub.IsActive {
-            status = "Non-Aktif"
+        if !sub.Aktif {
         }
-        fmt.Printf("%d. %s\n", i+1, sub.Name)
-        fmt.Printf("   - Harga: Rp%.0f\n", sub.Price)
-        fmt.Printf("   - Jatuh Tempo: tgl %s\n", sub.BillingDate)
-        fmt.Printf("   - Status: %s\n", status)
-        fmt.Printf("   - Kategori: %s\n", sub.Category)
+        fmt.Printf("%d. %s\n", i+1, sub.Nama)
+        fmt.Printf("   - Harga: Rp%.0f\n", sub.Harga)
+        fmt.Printf("   - Jatuh Tempo: tgl %s\n", sub.tanggalBiling)
+        fmt.Println("   - Status: Akrif")
+        fmt.Printf("   - Kategori: %s\n", sub.Kategori)
         fmt.Println("-----------------------------------------")
     }
 }

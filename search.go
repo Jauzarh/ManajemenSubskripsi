@@ -25,7 +25,7 @@ func sequentialSearch(subscriptions []Subscription, name string) int {
 	i := 0
 
 	for foundIndex == -1 && i < len(subscriptions) {
-		if subscriptions[i].Name == name {
+		if subscriptions[i].Nama == name {
 			foundIndex = i
 		}
 		i++
@@ -61,24 +61,24 @@ func searchByCategory() {
 	for low <= high {
 		mid := (low + high) / 2
 
-		if subscriptions[mid].Category == searchCategory {
+		if subscriptions[mid].Kategori == searchCategory {
 			ketemu = true
 			fmt.Println("\nHasil Pencarian:")
 			subkripsi(subscriptions[mid])
 
 			left := mid - 1
-			for left >= 0 && subscriptions[left].Category == searchCategory {
+			for left >= 0 && subscriptions[left].Kategori == searchCategory {
 				subkripsi(subscriptions[left])
 				left--
 			}
 
 			right := mid + 1
-			for right < len(subscriptions) && subscriptions[right].Category == searchCategory {
+			for right < len(subscriptions) && subscriptions[right].Kategori == searchCategory {
 				subkripsi(subscriptions[right])
 				right++
 			}
 			break
-		} else if subscriptions[mid].Category < searchCategory {
+		} else if subscriptions[mid].Kategori < searchCategory {
 			low = mid + 1
 		} else {
 			high = mid - 1

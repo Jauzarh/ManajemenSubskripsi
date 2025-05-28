@@ -6,11 +6,11 @@ import (
 )
 
 type Subscription struct {
-	Name        string
-	Price       float64
-	BillingDate string
-	IsActive    bool
-	Category    string
+	Nama        string
+	Harga       float64
+	tanggalBiling string
+	Aktif    bool
+	Kategori    string
 }
 
 var subscriptions []Subscription
@@ -30,9 +30,9 @@ func main() {
 }
 
 func tampilanMenu() {
-	fmt.Println("\n=== MANAGEMENT SUBKRIPSI ===")
-	fmt.Println("1. Lihat Subscription")
-	fmt.Println("2. Tambah Subscription")
+	fmt.Println("\n=== AturIn ===")
+	fmt.Println("1. Lihat Subkripsi")
+	fmt.Println("2. Tambah Subkripsi")
 	fmt.Println("3. Cari Layanan Langganan")
 	fmt.Println("4. Periksa Pengingat")
 	fmt.Println("5. Total Pengluaran")
@@ -64,9 +64,9 @@ func menuChoice() {
 
 func subkripsi(sub Subscription) {
 	status := "Non-Aktif"
-	if sub.IsActive {
+	if sub.Aktif {
 		status = "Aktif"
 	}
 	fmt.Printf("- %s (Rp%.0f, tgl %s, %s) [%s]\n",
-		sub.Name, sub.Price, sub.BillingDate, sub.Category, status)
+		sub.Nama, sub.Harga, sub.tanggalBiling, sub.Kategori, status)
 }
