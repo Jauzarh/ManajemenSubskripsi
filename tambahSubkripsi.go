@@ -1,4 +1,5 @@
-package main 
+package main
+
 import "fmt"
 
 func addSubscription() {
@@ -7,10 +8,19 @@ func addSubscription() {
 	fmt.Print("Nama Subscription: ")
 	fmt.Scanln(&sub.Nama)
 
-	fmt.Print("Harga: ")
-	fmt.Scanln(&sub.Harga)
+	for {
+		fmt.Print("Harga: ")
+		_, err := fmt.Scanln(&sub.Harga)
+		if err != nil {
+			fmt.Println("Error: input harus angka. Silakan coba lagi.")
+			var salah string
+			fmt.Scanln(&salah)
+			continue
+		}
+		break
+	}
 
-	fmt.Print("Tanggal Pembayaran (DD-MM): ")
+	fmt.Print("Tanggal Pembayaran | Gunakan Format(DD-MM): ")
 	var day, month int
 	fmt.Scanf("%d-%d", &day, &month)
 	fmt.Scanln()
@@ -23,12 +33,10 @@ func addSubscription() {
 	sub.tanggalBiling = fmt.Sprintf("%02d-%02d", day, month)
 
 	fmt.Print("Kategori: ")
-	fmt.Scanln(&sub.Kategori) 
+	fmt.Scanln(&sub.Kategori)
 
-
-    subscriptions = append(subscriptions, sub)
+	subscriptions = append(subscriptions, sub)
 
 	fmt.Println("Subscription berhasil ditambahkan!")
 	fmt.Println("Jatuh tempo 1 bulan kemudian:", sub.tanggalBiling)
 }
-
