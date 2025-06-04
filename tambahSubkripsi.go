@@ -3,7 +3,8 @@ package main
 import "fmt"
 
 func addSubscription() {
-	var sub Subscription
+	var sub Subkripsi
+	sub.Aktif = true
 
 	fmt.Print("Nama Subscription: ")
 	fmt.Scanln(&sub.Nama)

@@ -5,7 +5,7 @@ import (
 	"os"
 )
 
-type Subscription struct {
+type Subkripsi struct {
 	Nama        string
 	Harga       float64
 	tanggalBiling string
@@ -13,14 +13,14 @@ type Subscription struct {
 	Kategori    string
 }
 
-var subscriptions []Subscription
+var subscriptions []Subkripsi
 
 func main() {
-	subscriptions = []Subscription{
-		{"Netflix", 149000, "15-01", true, "Hiburan"},
-		{"Disney+", 79000, "10-03", true, "Hiburan"},
-		{"Spotify", 49900, "05-02", true, "Musik"},
+	subscriptions = []Subkripsi{
 		{"iCloud", 29000, "20-02", true, "Penyimpanan"},
+		{"Netflix", 149000, "15-01", true, "Hiburan"},
+		{"Spotify", 49900, "05-02", true, "Musik"},
+		{"Disney+", 79000, "10-03", true, "Hiburan"},
 	}
 
 	for {
@@ -46,14 +46,15 @@ func menuChoice() {
 
 	switch choice {
 	case 1:
-		showSubscriptions(subscriptions)
+		menuTampilan(subscriptions)
 	case 2:
 		addSubscription()
 	case 3:
-		searchSubscriptions()
+		carilangganan()
 	case 4:
-		checkPaymentReminders()
-
+		pengingatTenggat()
+	case 5:
+		tampilkantotal(subscriptions)
 	case 0:
 		fmt.Println("Terima kasih!")
 		os.Exit(0)
@@ -62,7 +63,7 @@ func menuChoice() {
 	}
 }
 
-func subkripsi(sub Subscription) {
+func subkripsi(sub Subkripsi) {
 	status := "Non-Aktif"
 	if sub.Aktif {
 		status = "Aktif"

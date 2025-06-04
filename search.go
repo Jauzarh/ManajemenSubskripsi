@@ -1,7 +1,7 @@
 package main
 import "fmt"
 
-func searchSubscriptions() {
+func carilangganan() {
 	fmt.Println("\nCARI :")
 	fmt.Println("1. Berdasarkan Nama")
 	fmt.Println("2. Berdasarkan Kategori")
@@ -12,29 +12,29 @@ func searchSubscriptions() {
 
 	switch pilihan {
 	case 1:
-		searchSubscriptionByName()
+		sesuaiNama()
 	case 2:
-		searchByCategory()
+		sesuaikategori()
 	default:
 		fmt.Println("Pilihan tidak valid")
 	}
 }
 
-func sequentialSearch(subscriptions []Subscription, name string) int {
-	foundIndex := -1
+func sequentialSearch(subscriptions []Subkripsi, nama string) int {
+	indexKetemu := -1
 	i := 0
 
-	for foundIndex == -1 && i < len(subscriptions) {
-		if subscriptions[i].Nama == name {
-			foundIndex = i
+	for indexKetemu == -1 && i < len(subscriptions) {
+		if subscriptions[i].Nama == nama {
+			indexKetemu = i
 		}
 		i++
 	}
 
-	return foundIndex
+	return indexKetemu
 }
 
-func searchSubscriptionByName() {
+func sesuaiNama() {
 	fmt.Print("Masukkan nama subscription yang ingin dicari: ")
 	var searchName string
 	fmt.Scanln(&searchName)
@@ -49,7 +49,7 @@ func searchSubscriptionByName() {
 	}
 }
 
-func searchByCategory() {
+func sesuaikategori() {
 	fmt.Print("Masukkan kategori yang dicari: ")
 	var searchCategory string
 	fmt.Scanln(&searchCategory)
