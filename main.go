@@ -8,7 +8,7 @@ import (
 type Subkripsi struct {
 	Nama        string
 	Harga       float64
-	tanggalBiling string
+	jatuhTempo string
 	Aktif    bool
 	Kategori    string
 }
@@ -31,9 +31,9 @@ func main() {
 
 func tampilanMenu() {
 	fmt.Println("\n=== AturIn ===")
-	fmt.Println("1. Lihat Subkripsi")
-	fmt.Println("2. Tambah Subkripsi")
-	fmt.Println("3. Cari Layanan Langganan")
+	fmt.Println("1. Tambah Subkripsi")
+	fmt.Println("2. Cari Subkripsi")
+	fmt.Println("3. Lihat Subkripsi")
 	fmt.Println("4. Periksa Pengingat")
 	fmt.Println("5. Total Pengluaran")
 	fmt.Println("0. Keluar")
@@ -46,11 +46,11 @@ func menuChoice() {
 
 	switch choice {
 	case 1:
-		menuTampilan(subscriptions)
-	case 2:
 		addSubscription()
-	case 3:
+	case 2:
 		carilangganan()
+	case 3:
+		menuTampilan(subscriptions)
 	case 4:
 		pengingatTenggat()
 	case 5:
@@ -69,5 +69,5 @@ func subkripsi(sub Subkripsi) {
 		status = "Aktif"
 	}
 	fmt.Printf("- %s (Rp%.0f, tgl %s, %s) [%s]\n",
-		sub.Nama, sub.Harga, sub.tanggalBiling, sub.Kategori, status)
+		sub.Nama, sub.Harga, sub.jatuhTempo, sub.Kategori, status)
 }

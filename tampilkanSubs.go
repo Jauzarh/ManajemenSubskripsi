@@ -41,7 +41,7 @@ func tampilkanTabel(subs []Subkripsi) {
             i+1,
             sub.Nama,
             sub.Harga,
-            sub.tanggalBiling,
+            sub.jatuhTempo,
             status,
             sub.Kategori)
     }

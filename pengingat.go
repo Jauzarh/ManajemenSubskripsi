@@ -17,7 +17,7 @@ func pengingatTenggat() {
 		}
 
 		var haritagih, bulan int
-		fmt.Sscanf(sub.tanggalBiling, "%02d-%02d", &haritagih, &bulan)
+		fmt.Sscanf(sub.jatuhTempo, "%02d-%02d", &haritagih, &bulan)
 
 		if bulansekarang == bulan {
 			jatuhtempo := haritagih - harisekarang
@@ -27,11 +27,11 @@ func pengingatTenggat() {
 				pengingat = true
 			case jatuhtempo > 0 && jatuhtempo <= 3:
 				fmt.Printf("%d hari lagi: %s - Rp%.0f (tgl %s)\n", 
-					jatuhtempo, sub.Nama, sub.Harga, sub.tanggalBiling)
+					jatuhtempo, sub.Nama, sub.Harga, sub.jatuhTempo)
 				pengingat = true
 			case jatuhtempo < 0:
 				fmt.Printf("Terlambat %d hari: %s - Rp%.0f (seharusnya tgl %s)\n", 
-					-jatuhtempo, sub.Nama, sub.Harga, sub.tanggalBiling)
+					-jatuhtempo, sub.Nama, sub.Harga, sub.jatuhTempo)
 				pengingat = true
 			}
 		}

@@ -31,7 +31,7 @@ func addSubscription() {
 		month = 1
 	}
 
-	sub.tanggalBiling = fmt.Sprintf("%02d-%02d", day, month)
+	sub.jatuhTempo = fmt.Sprintf("%02d-%02d", day, month)
 
 	fmt.Print("Kategori: ")
 	fmt.Scanln(&sub.Kategori)
@@ -39,5 +39,5 @@ func addSubscription() {
 	subscriptions = append(subscriptions, sub)
 
 	fmt.Println("Subscription berhasil ditambahkan!")
-	fmt.Println("Jatuh tempo 1 bulan kemudian:", sub.tanggalBiling)
+	fmt.Println("Jatuh tempo 1 bulan kemudian:", sub.jatuhTempo)
 }
