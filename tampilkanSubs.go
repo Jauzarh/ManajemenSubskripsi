@@ -4,7 +4,7 @@ import "fmt"
 
 func menuTampilan(subs []Subkripsi) {
     for {
-        fmt.Println("\n--- Lihat Subkripsi ---")
+        fmt.Println("\n    Lihat Subkripsi    ")
         fmt.Println("1. Urutkan berdasarkan Harga (Termahal)")
         fmt.Println("2. Urutkan berdasarkan Kategori")
         fmt.Println("3. Kembali ke Menu Utama")
@@ -27,9 +27,9 @@ func menuTampilan(subs []Subkripsi) {
 }
 
 func tampilkanTabel(subs []Subkripsi) {
-    fmt.Println("+----+----------------+-----------+--------------+----------+-------------+")
+    fmt.Println("---------------------------------------------------------------------------")
     fmt.Println("| No |      Nama      |   Harga   | Jatuh Tempo  |  Status  |  Kategori   |")
-    fmt.Println("+----+----------------+-----------+--------------+----------+-------------+")
+    fmt.Println("----------------------------------------------------------------------------")
     
     for i, sub := range subs {
         status := "Nonaktif"
@@ -46,7 +46,7 @@ func tampilkanTabel(subs []Subkripsi) {
             sub.Kategori)
     }
     
-    fmt.Println("+----+----------------+-----------+--------------+----------+-------------+")
+    fmt.Println("----------------------------------------------------------------------------")
 }
 
 func sesuaiHarga(subk []Subkripsi) {
